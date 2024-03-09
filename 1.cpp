@@ -2,27 +2,27 @@
 
 #include <iostream>
 #include <string>
-
-using namespace std;
+#include <cctype>
 
 int main()
 {
-    string s;
-    getline(cin, s);
+    std::string input_string = "";
+    std::cout << "Enter the string: ";
+    std::getline(std::cin, input_string);
 
-    string s2;
-    char sb = '\0';
-    for (int i = 0; i < s.size(); i++)
+    char previous_char = '\0';
+    std::string output_string = "";
+    for (int i = 0; i < input_string.size(); i++)
     {
-        char cs = s[i];
-        if (!(isspace(cs) && isspace(sb)))
+        char current_char = input_string[i];
+        if (!(std::isspace(current_char) && std::isspace(previous_char)))
         {
-            s2 += cs;
-            sb = cs;
+            output_string += current_char;
         }
+        previous_char = current_char;
     }
 
-    cout << s2 << endl;
+    std::cout << output_string << std::endl;
 
     return 0;
 }
