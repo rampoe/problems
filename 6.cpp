@@ -8,7 +8,7 @@ int main()
     unsigned long long int n = 0;
     std::cout << "N = ";
     std::cin >> n;
-    unsigned long long int triangle[n][n];
+    unsigned long long int triangle[100][100];
     for (unsigned long long int i = 0; i < n; i++)
     {
     	for (unsigned long long int j = 0; j <= i; j++)
